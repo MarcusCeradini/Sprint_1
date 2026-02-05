@@ -1,7 +1,8 @@
-# Blockers
+# Blockers Log
 
-## Pygame can not be installed on desktop computers
-- Status: In progress
-- Priority: Low
-- Description: Pygame can not be installed on the computer lab desktop computers
-- Notes: WakeTech blocked Pygame
+### 2/5/2026 9:20
+### Pygame can not be installed on desktop computers
+- Impact: Stopped the whole team from continuing code
+- Resolution: TBD
+- Time to Resolve: TBD
+- Root Cause: WakeTech blocked Pygame
