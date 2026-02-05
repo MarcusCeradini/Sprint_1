@@ -16,33 +16,28 @@ Short explanation of what the game is about:
 ## How to Run the Game
 
 ### Requirements
-- Platform (PC / Web / Mobile)
-- Engine or software needed (if any)
+- pygame
 
 ### Steps
 1. Download or clone the project
-2. Open the project (or executable)
-3. Run the game
-
-(Replace with exact commands or steps if needed.)
+2. Download Pygame
+3. Open the project (or executable)
+4. Run the game
 
 ---
 
 ## Controls
 
+- Clicking on upgrades: mouse clicking
 - Drag the hook: mouse movements
 
 ---
 
 ## Known Issues
 
-- Issue 1
-- Issue 2
-- Issue 3
+- Limited Graphics
+- No multplayer
 
 ---
 
 ## Notes
-
-(Optional)
-Any extra info, limitations, or reminders.
