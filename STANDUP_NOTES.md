@@ -1,6 +1,6 @@
 # Stand up Notes
 
-##Date: 2/5/26
+## Date: 2/5/26
 
 ## Evan Y
 What I did: Set up project basics 
