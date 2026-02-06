@@ -5,6 +5,7 @@ pygame.init()
 
 import gameState
 from viewport import viewport
+from fish import fish
  
 # Colors
 BACKGROUND = (255, 255, 255)
@@ -42,8 +43,12 @@ def main():
 
     # update fish (plural)
     
+    for element in fish:
+      element.update()
+      
     # draw hook
-    # ..
+    for element in fish:
+      element.draw()
 
     pygame.display.update()
     fpsClock.tick(FPS)
