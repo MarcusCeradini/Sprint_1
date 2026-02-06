@@ -1,21 +1,8 @@
-# Steps to run on school laptop
+# Steps to run on computers
 
-1. Make sure Python and pip is installed:
+1. Open new terminal in Visual Studio Code
 
-`python --version` or `python3 --version`
-
-`pip --version` or `pip3 --version`
-
-2. Create a virtual environment
-
-`python -m venv venv`
-
-
-3. Activate the virtual environment
-
-`venv\Scripts\Activate`
-
-If this doesn't work, try running this first:
+2. Paste and enter installation of Pygame:
 
 `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`
 
