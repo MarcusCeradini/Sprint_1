@@ -13,8 +13,8 @@ class Fish:
         pygame.Rect(self.x - viewport.x, self.y - viewport.y, 30, 30)
 
 fish = [
-    Fish(),
-    Fish(),
-    Fish(),
+    Clown(),
+    Angle(),
+    Guppy(),
     Fish()
 ]
