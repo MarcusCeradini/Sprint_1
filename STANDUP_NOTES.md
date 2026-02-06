@@ -9,7 +9,7 @@
 
 ## Marcus C
 - What I did: Set up project basics
-- What I'm doing: Makeing all requried files on GitHub for submition
+- What I'm doing: Making all required files on GitHub for submission
 - Blocked? N/A
 
 ## Bianca B

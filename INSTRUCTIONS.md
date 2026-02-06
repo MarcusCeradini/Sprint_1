@@ -23,7 +23,7 @@ If done right, you should see (venv) on the left side of your terminal's path
 
 4. Install pygame
 
-`pip install pygame`
+`pip install pygame` or `python -m pip install pygame-ce` for wake tech computers
 
 Verify it is installed with: `pip show pygame`
 

@@ -1,6 +1,8 @@
 import pygame
 import sys
 pygame.init()
+
+from viewport import viewport
  
 # Colors
 BACKGROUND = (255, 255, 255)
@@ -18,7 +20,7 @@ def main():
   looping = True
   
   # The main game loop
-  while looping :
+  while looping:
     # Get inputs
     for event in pygame.event.get():
       if event.type == pygame.QUIT:
@@ -27,6 +29,17 @@ def main():
 
     # Render elements of the game
     WINDOW.fill(BACKGROUND)
+
+    # Game logic
+
+    # update hook
+    
+    # update viewport
+
+    # update fish (plural)
+    
+    # draw hook
+    # ..
 
     pygame.display.update()
     fpsClock.tick(FPS)
