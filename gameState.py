@@ -1,8 +1,8 @@
 import random
 from fish import fish, Fish
 
-def start_cast(round):
-    generate_fish(round=1)
+def start_cast(current_round):
+    generate_fish(current_round)
 
 def generate_fish(current_round):
     fish_count = current_round * 10
