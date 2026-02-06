@@ -2,6 +2,8 @@ import pygame
 import sys
 pygame.init()
 
+
+import gameState
 from viewport import viewport
  
 # Colors
