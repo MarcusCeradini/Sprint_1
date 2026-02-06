@@ -17,12 +17,14 @@ Short explanation of what the game is about:
 
 ### Requirements
 - pygame
+- Python extension
 
 ### Steps
 1. Download or clone the project
 2. Download Pygame
-3. Open the project (or executable)
-4. Run the game
+3. Install python extension in VS Extensions
+4. Open the project (or executable)
+5. Run the game
 
 ---
 
