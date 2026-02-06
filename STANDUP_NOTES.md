@@ -31,3 +31,30 @@
 - N/A
 
 ---
+
+## Date: 2/6/26
+
+## Evan Y
+- What I did: Planned structured of code, assigned coding tasks and assisted with teammates.
+- What I'm doing: 
+- Blocked? N/A
+
+## Marcus C
+- What I did: Planned how to make fish generator, finished and pushed.
+- What I'm doing: Making all required files on GitHub for submission
+- Blocked? N/A
+
+## Bianca B
+- What I did: Finished viewport logic and code
+- What I'm doing: 
+- Blocked? N/A
+
+## Maddy P
+- What I did: Worked on hook logic and code
+- What I'm doing: 
+- Blocked? N/A
+
+## Ayah A
+- What I did: Worked on fish logic and code
+- What I'm doing: 
+- Blocked? N/A
