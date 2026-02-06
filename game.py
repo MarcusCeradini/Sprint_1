@@ -2,11 +2,9 @@ import pygame
 import sys
 pygame.init()
 
-
 import gameState
-from viewport import viewport
+from viewport import viewport, create_viewport
 from fish import fish
- 
 # Colors
 BACKGROUND = (255, 255, 255)
  
@@ -16,6 +14,7 @@ fpsClock = pygame.time.Clock()
 WINDOW_WIDTH = 400
 WINDOW_HEIGHT = 300
  
+create_viewport(WINDOW_WIDTH, WINDOW_HEIGHT)
 WINDOW = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 pygame.display.set_caption('My Game!')
 
@@ -40,6 +39,7 @@ def main():
     # update hook
     
     # update viewport
+    viewport.update()
 
     # update fish (plural)
     

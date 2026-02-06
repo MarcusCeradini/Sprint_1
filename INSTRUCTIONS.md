@@ -1,8 +1,10 @@
 # Steps to run on computers
 
-1. Open new terminal in Visual Studio Code
+1. Ensure python extension is downloaded
 
-2. Paste and enter installation of Pygame:
+2. Open new terminal in Visual Studio Code
+
+3. Paste and enter installation of Pygame:
 
 `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`
 
