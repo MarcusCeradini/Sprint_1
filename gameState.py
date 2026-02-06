@@ -1,5 +1,5 @@
 from fish import fish, generate_fish
 
-def start_cast(round):
-    generate_fish(round=1)
+def start_cast(current_round):
+    generate_fish(current_round)
     

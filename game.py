@@ -17,6 +17,8 @@ WINDOW_HEIGHT = 300
  
 WINDOW = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 pygame.display.set_caption('My Game!')
+
+current_round = 1
  
 def main():
   looping = True
