@@ -2,23 +2,25 @@ import pygame
 import sys
 pygame.init()
 
+from setup import *
 import gameState
-from viewport import viewport, create_viewport
+from viewport import viewport
 from fish import fish
+from hook import hook
 # Colors
-BACKGROUND = (255, 255, 255)
+BACKGROUND = (0, 100, 255)
  
 # Game Setup
-FPS = 60
 fpsClock = pygame.time.Clock()
-WINDOW_WIDTH = 400
-WINDOW_HEIGHT = 300
  
-create_viewport(WINDOW_WIDTH, WINDOW_HEIGHT)
-WINDOW = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
-pygame.display.set_caption('My Game!')
+viewport.width = WINDOW_WIDTH
+viewport.height = WINDOW_HEIGHT
+screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
+pygame.display.set_caption('Fshng Game')
 
 current_round = 1
+
+gameState.start_cast(1)
  
 def main():
   looping = True
@@ -32,11 +34,12 @@ def main():
         sys.exit()
 
     # Render elements of the game
-    WINDOW.fill(BACKGROUND)
+    screen.fill(BACKGROUND)
 
     # Game logic
 
     # update hook
+    hook.update()
     
     # update viewport
     viewport.update()
@@ -46,9 +49,12 @@ def main():
     for element in fish:
       element.update()
       
-    # draw hook
+    # draw fish
     for element in fish:
-      element.draw()
+      element.draw(screen)
+
+    # draw hook
+    hook.draw(screen)
 
     pygame.display.update()
     fpsClock.tick(FPS)
