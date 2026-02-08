@@ -40,6 +40,8 @@ def main():
 
     # update hook
     hook.update()
+
+
     
     # update viewport
     viewport.update()
@@ -51,11 +53,12 @@ def main():
       
     # draw fish
     for element in fish:
-      element.draw(screen)
+      if not element.caught:
+        element.draw(screen)
 
     # draw hook
     hook.draw(screen)
-
+   # Used AI to fix fish not being gotten rid of when caught issue
     pygame.display.update()
     fpsClock.tick(FPS)
  
