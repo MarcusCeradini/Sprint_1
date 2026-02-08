@@ -10,23 +10,21 @@ class Hook:
         self.attached_fishes = []
         self.catch_distance = 20
         self.max_fish = 5
-        self.fish_caught = 0
 
     # Used AI to help with the hook movement and collision detection
     def update(self):
         cursor_x, cursor_y = pygame.mouse.get_pos()
-        # print(cursor_x, cursor_y)
-        self.y = viewport.y + viewport.width/2
         self.x = cursor_x 
+        self.y = viewport.y + cursor_y
+        # self.y = viewport.y + viewport.width / 2
         
         # Check for fish collision if not at max capacity
         if len(self.attached_fishes) < self.max_fish:
             for fish_obj in fish:
-                distance = ((self.x - fish_obj.x)**2 + (self.y - fish_obj.y)**2)**0.5
-                if distance < self.catch_distance:
+                if not fish_obj.caught and fish_obj.check_collision(self.x, self.y):
+                    fish_obj.caught = True
                     self.attached_fishes.append(fish_obj)
-                    fish.remove(fish_obj)
-                    self.fish_caught += 1
+                    print('caught!')
                     break
         
         # Update attached fish positions to follow hook
@@ -40,11 +38,11 @@ class Hook:
         # Draw attached fish if there are any
         if self.attached_fishes:
             for attached_fish in self.attached_fishes:
-                attached_fish.draw(surface) 
+                attached_fish.draw(surface)
         
         # Draw fish counter in top right corner
         font = pygame.font.Font(None, 36)
-        counter_text = font.render(f"Fish Caught: {self.fish_caught}", True, (255, 255, 255))
+        counter_text = font.render(f"Fish Caught: {len(self.attached_fishes)}", True, (255, 255, 255))
         surface.blit(counter_text, (surface.get_width() - counter_text.get_width() - 20, 20)) 
    
 hook = Hook()

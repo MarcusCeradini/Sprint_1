@@ -40,6 +40,8 @@ def main():
 
     # update hook
     hook.update()
+
+
     
     # update viewport
     viewport.update()
@@ -47,11 +49,12 @@ def main():
     # update fish (plural)
     
     for element in fish:
-      element.update()
+      element.update(hook)
       
     # draw fish
     for element in fish:
-      element.draw(screen)
+      if not element.caught:
+        element.draw(screen)
 
     # draw hook
     hook.draw(screen)
