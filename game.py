@@ -47,7 +47,7 @@ def main():
     # update fish (plural)
     
     for element in fish:
-      element.update()
+      element.update(hook)
       
     # draw fish
     for element in fish:
