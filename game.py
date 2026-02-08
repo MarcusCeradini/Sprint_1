@@ -40,6 +40,8 @@ def main():
 
     # update hook
     hook.update()
+
+
     
     # update viewport
     viewport.update()
