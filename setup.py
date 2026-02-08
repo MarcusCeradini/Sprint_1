@@ -2,3 +2,5 @@ FPS = 60
 
 WINDOW_WIDTH = 960
 WINDOW_HEIGHT = 600
+
+cast_distance = 2000

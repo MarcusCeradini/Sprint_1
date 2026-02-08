@@ -9,6 +9,7 @@ class Fish:
         self.y = y
         self.xv = xv if xv != 0 else 2  # Default horizontal speed
         self.yv = yv if yv != 0 else 1   # Default vertical speed
+
         self.caught = False
 
         self.color = (255, 0, 0)
@@ -56,8 +57,8 @@ class Carp(Fish):
 class Salmon(Fish):
     def __init__(self, x, y, xv = 0, yv = 0):
         super().__init__(x, y, xv, yv)
-        self.width = 50
-        self.height = 30
+        self.width = 70
+        self.height = 40
 
         self.color = (255, 0, 0)
 
