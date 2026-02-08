@@ -58,7 +58,7 @@ def main():
 
     # draw hook
     hook.draw(screen)
-
+   # Used AI to fix fish not being gotten rid of when caught issue
     pygame.display.update()
     fpsClock.tick(FPS)
  
