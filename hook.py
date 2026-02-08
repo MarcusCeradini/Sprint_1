@@ -14,9 +14,9 @@ class Hook:
     # Used AI to help with the hook movement and collision detection
     def update(self):
         cursor_x, cursor_y = pygame.mouse.get_pos()
-        # print(cursor_x, cursor_y)
-        self.y = viewport.y + viewport.width/2
         self.x = cursor_x 
+        self.y = viewport.y + cursor_y
+        # self.y = viewport.y + viewport.width / 2
         
         # Check for fish collision if not at max capacity
         if len(self.attached_fishes) < self.max_fish:
