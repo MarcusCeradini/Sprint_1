@@ -1,5 +1,5 @@
 import random
-from setup import WINDOW_WIDTH, WINDOW_HEIGHT
+from setup import WINDOW_WIDTH, WINDOW_HEIGHT, cast_distance
 from fish import *
 
 def start_cast(current_round):
@@ -23,4 +23,4 @@ def generate_fish(current_round):
         rng = random.random()
         for FishClass, probability in CUMULATIVE_PROBABILITIES.items():
             if rng < probability:
-                fish.append(FishClass(random.randint(0, WINDOW_WIDTH), random.randint(0, WINDOW_HEIGHT)))
+                fish.append(FishClass(random.randint(0, WINDOW_WIDTH), random.randint(0, cast_distance)))

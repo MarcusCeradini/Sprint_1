@@ -1,12 +1,16 @@
 import pygame
 from viewport import viewport
 from fish import fish
+from state import state
 
 class Hook:
     def __init__(self):
         self.x = 0
         self.y = 0
+        
+        self.radius = 5
         self.color = 'BLACK'
+
         self.attached_fishes = []
         self.catch_distance = 20
         self.max_fish = 5
@@ -21,11 +25,12 @@ class Hook:
         # Check for fish collision if not at max capacity
         if len(self.attached_fishes) < self.max_fish:
             for fish_obj in fish:
-                if fish_obj.caught:
-                    break
+                if state['current_action'] != 'reeling' or fish_obj.caught:
+                    continue
                 if fish_obj.check_collision(self.x, self.y):
                     self.attached_fishes.append(fish_obj)
-                    print('caught!')
+                    fish_obj.caught = True
+                    break
         
         # Update attached fish positions to follow hook
         for attached_fish in self.attached_fishes:
@@ -33,7 +38,7 @@ class Hook:
             attached_fish.y = self.y + 10 
 
     def draw(self, surface):
-        pygame.draw.circle(surface, self.color, (self.x - viewport.x, self.y - viewport.y), 5) 
+        pygame.draw.circle(surface, self.color, (self.x - viewport.x, self.y - viewport.y), self.radius) 
         
         # Draw fish counter in top right corner
         font = pygame.font.Font(None, 36)

@@ -16,10 +16,11 @@ class Fish:
         if self.caught:
             # Update attached fish positions to follow hook
             self.x = hook.x
-            self.y = hook.y + 10 
+            self.y = hook.y + 10
     
     def check_collision(self, x, y):
         # rectangle to point collision detection
+        if self.x <= x and x <= self.x + self.width and self.y <= y and y <= self.y + self.height: print(True)
         return self.x <= x and x <= self.x + self.width and self.y <= y and y <= self.y + self.height
 
     def draw(self, surface):
@@ -42,8 +43,8 @@ class Carp(Fish):
 class Salmon(Fish):
     def __init__(self, x, y, xv = 0, yv = 0):
         super().__init__(x, y, xv, yv)
-        self.width = 50
-        self.height = 30
+        self.width = 70
+        self.height = 40
 
         self.color = (255, 0, 0)
 
