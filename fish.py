@@ -17,8 +17,8 @@ class Fish:
     def update(self, hook):
         if self.caught:
             # Update attached fish positions to follow hook
-            self.x = hook.x + 5
-            self.y = hook.y + 5 
+            self.x = hook.x - self.width / 2
+            self.y = hook.y + hook.radius + 5
         else:
             # Move fish and bounce off screen edges
             self.x += self.xv

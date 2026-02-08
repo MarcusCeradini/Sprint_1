@@ -53,7 +53,6 @@ def main():
       
     # draw fish
     for element in fish:
-      if not element.caught:
         element.draw(screen)
 
     # draw hook

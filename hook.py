@@ -31,11 +31,6 @@ class Hook:
                     self.attached_fishes.append(fish_obj)
                     fish_obj.caught = True
                     break
-        
-        # Update attached fish positions to follow hook
-        for attached_fish in self.attached_fishes:
-            attached_fish.x = self.x
-            attached_fish.y = self.y + 10 
 
     def draw(self, surface):
         pygame.draw.circle(surface, self.color, (self.x - viewport.x, self.y - viewport.y), self.radius) 
