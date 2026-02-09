@@ -23,42 +23,42 @@ current_round = 1
 gameState.start_cast(1)
  
 def main():
-  looping = True
-  
-  # The main game loop
-  while looping:
-    # Get inputs
-    for event in pygame.event.get():
-      if event.type == pygame.QUIT:
-        pygame.quit()
-        sys.exit()
-
-    # Render elements of the game
-    screen.fill(BACKGROUND)
-
-    # Game logic
-
-    # update hook
-    hook.update()
-
-
+    looping = True
     
-    # update viewport
-    viewport.update()
+    # The main game loop
+    while looping:
+        # Get inputs
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
 
-    # update fish (plural)
-    
-    for element in fish:
-      element.update(hook)
-      
-    # draw fish
-    for element in fish:
-        element.draw(screen)
+        # Render elements of the game
+        screen.fill(BACKGROUND)
 
-    # draw hook
-    hook.draw(screen)
-   # Used AI to fix fish not being gotten rid of when caught issue
-    pygame.display.update()
-    fpsClock.tick(FPS)
+        # Game logic
+
+        # update hook
+        hook.update()
+
+
+        
+        # update viewport
+        viewport.update()
+
+        # update fish (plural)
+        
+        for element in fish:
+            element.update(hook)
+            
+        # draw fish
+        for element in fish:
+                element.draw(screen)
+
+        # draw hook
+        hook.draw(screen)
+     # Used AI to fix fish not being gotten rid of when caught issue
+        pygame.display.update()
+        fpsClock.tick(FPS)
  
 main()
