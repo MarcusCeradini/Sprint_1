@@ -7,6 +7,7 @@ import gameState
 from viewport import viewport
 from fish import fish
 from hook import hook
+from state import state
 # Colors
 BACKGROUND = (0, 100, 255)
  
@@ -20,7 +21,7 @@ pygame.display.set_caption('Fshng Game')
 
 current_round = 1
 
-gameState.start_cast(1)
+gameState.start_cast(current_round)
  
 def main():
   looping = True
@@ -32,17 +33,22 @@ def main():
       if event.type == pygame.QUIT:
         pygame.quit()
         sys.exit()
+      elif event.type == pygame.MOUSEBUTTONUP:
+        if state['current_action'] == 'waiting':
+            hook.cast()
+            gameState.start_cast(current_round)
 
     # Render elements of the game
     screen.fill(BACKGROUND)
+    if viewport.y < 0:
+      pygame.draw.rect(screen, (0, 200, 255), pygame.Rect(0, 0, WINDOW_WIDTH, -viewport.y))
+  
 
     # Game logic
 
     # update hook
     hook.update()
 
-
-    
     # update viewport
     viewport.update()
 
