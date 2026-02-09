@@ -16,9 +16,14 @@ class Fish:
 
     def update(self, hook):
         if self.caught:
+            # Calculate position of each fish individually to create a vertical line
+            index_of_fish = hook.attached_fishes.index(self)
+            y_offset_fish = hook.radius + 5
+            for i in range(index_of_fish):
+                y_offset_fish += hook.attached_fishes[i].height + 5
             # Update attached fish positions to follow hook
             self.x = hook.x - self.width / 2
-            self.y = hook.y + hook.radius + 5
+            self.y = hook.y + y_offset_fish
         else:
             # Move fish and bounce off screen edges
             self.x += self.xv
