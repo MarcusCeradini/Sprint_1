@@ -33,10 +33,10 @@ def main():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-        elif event.type == pygame.MOUSEBUTTONUP:
-            if state['current_action'] == 'waiting':
-                hook.cast()
-                gameState.start_cast(current_round)
+            elif event.type == pygame.MOUSEBUTTONUP:
+                if state['current_action'] == 'waiting':
+                    hook.cast()
+                    gameState.start_cast(current_round)
 
         # Render elements of the game
         screen.fill(BACKGROUND)
