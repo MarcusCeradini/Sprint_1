@@ -19,10 +19,10 @@ viewport.height = WINDOW_HEIGHT
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 pygame.display.set_caption('Fshng Game')
 
-current_round = 0
+current_round = 1
 max_round = 5
 
-gameState.start_cast(1)
+# gameState.start_cast(1)
  
 def main():
     global current_round

@@ -19,10 +19,11 @@ for key in CUMULATIVE_PROBABILITIES:
     CUMULATIVE_PROBABILITIES[key] = running_total
 
 def generate_fish(current_round):
-    fish_count = 8 + current_round + 2
+    fish_count = 10 + current_round * 2
     fish.clear()
     for i in range(fish_count):
         rng = random.random()
         for FishClass, probability in CUMULATIVE_PROBABILITIES.items():
             if rng < probability:
                 fish.append(FishClass(random.randint(0, WINDOW_WIDTH), random.randint(0, cast_distance)))
+                break
