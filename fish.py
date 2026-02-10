@@ -95,6 +95,6 @@ class Swordfish(Fish):
         self.width = 150
         self.height = int(self.width * self.aspect_ratio)
         self.scale_img()
-        self.pounds = 5
+        self.pounds = 100
 
 fish = []

@@ -9,7 +9,7 @@ class Viewport:
         self.x = 0
         self.y = -WINDOW_HEIGHT * 2 / 3
         self.width = WINDOW_WIDTH
-        self.height = WINDOW_HEIGHT
+        self.height = WINDOW_HEIGHT / 2
     def update(self):
         if state['current_action'] == 'waiting':
             self.x = 0

@@ -14,7 +14,7 @@ BACKGROUND = (0, 100, 255)
 # Game Setup
 fpsClock = pygame.time.Clock()
 
-viewport.width = WINDOW_WIDTH
+viewport.width = WINDOW_WIDTH / 2
 viewport.height = WINDOW_HEIGHT
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 pygame.display.set_caption('Fshng Game')
