@@ -3,6 +3,7 @@ from setup import WINDOW_WIDTH, WINDOW_HEIGHT, cast_distance
 from fish import *
 
 def start_cast(current_round):
+    print('New round!')
     generate_fish(current_round)
 
 PROBABILITIES = {
@@ -18,7 +19,8 @@ for key in CUMULATIVE_PROBABILITIES:
     CUMULATIVE_PROBABILITIES[key] = running_total
 
 def generate_fish(current_round):
-    fish_count = current_round * 10
+    fish_count = 8 + current_round + 2
+    fish.clear()
     for i in range(fish_count):
         rng = random.random()
         for FishClass, probability in CUMULATIVE_PROBABILITIES.items():
