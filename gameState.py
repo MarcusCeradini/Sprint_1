@@ -7,8 +7,9 @@ def start_cast(current_round):
     generate_fish(current_round)
 
 PROBABILITIES = {
-    Carp: .6,
-    Salmon: .3,
+    Carp: .5,
+    Goldfish: .25,
+    Salmon: .15,
     Swordfish: .1
 }
 

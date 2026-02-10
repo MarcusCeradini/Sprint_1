@@ -22,8 +22,6 @@ pygame.display.set_caption('Fshng Game')
 current_round = 1
 max_round = 5
 
-# gameState.start_cast(1)
- 
 def main():
     global current_round
     looping = True

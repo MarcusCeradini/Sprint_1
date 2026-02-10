@@ -5,6 +5,7 @@ from state import state
 
 # abstract class
 class Fish:
+    image = ''
     def __init__(self, x, y, xv = 0, yv = 0):
         self.x = x
         self.y = y
@@ -13,7 +14,9 @@ class Fish:
 
         self.caught = False
 
-        self.color = (255, 0, 0)
+        # Used AI to display images
+        orig_width, orig_height = self.image.get_size()
+        self.aspect_ratio = orig_height / orig_width
 
     def update(self, hook):
         if self.caught:
@@ -43,37 +46,55 @@ class Fish:
         # rectangle to point collision detection
         return self.x <= x and x <= self.x + self.width and self.y <= y and y <= self.y + self.height
 
+    def scale_img(self):
+        self.scaled_image = pygame.transform.smoothscale(self.image.convert_alpha(), (self.width, self.height))
+
     def draw(self, surface):
         if not self.caught and state['current_action'] == 'waiting':
             return
-        pygame.draw.rect(surface, self.color, pygame.Rect(self.x - viewport.x, self.y - viewport.y, self.width, self.height))
+        # pygame.draw.rect(surface, self.color, pygame.Rect(self.x - viewport.x, self.y - viewport.y, self.width, self.height))
+        surface.blit(self.scaled_image, (self.x - viewport.x, self.y - viewport.y))
 
 
 class Carp(Fish):
+    image = pygame.image.load("Sprites/carp.png")
+
     def __init__(self, x, y, xv = 0, yv = 0):
         super().__init__(x, y, xv, yv)
         self.width = 50
-        self.height = 30
+        self.height = int(self.width * self.aspect_ratio)
+        self.scale_img()
+        self.pounds = 1
+
+class Goldfish(Fish):
+    image = pygame.image.load("Sprites/goldfish.png")
+
+    def __init__(self, x, y, xv = 0, yv = 0):
+        super().__init__(x, y, xv, yv)
+        self.width = 40
+        self.height = int(self.width * self.aspect_ratio)
+        self.scale_img()
         self.pounds = 2
-        self.point = 1
-        self.color = (200, 0, 0)
+        
         
 class Salmon(Fish):
+    image = pygame.image.load("Sprites/salmon.png")
+
     def __init__(self, x, y, xv = 0, yv = 0):
         super().__init__(x, y, xv, yv)
-        self.width = 70
-        self.height = 40
+        self.width = 100
+        self.height = int(self.width * self.aspect_ratio)
+        self.scale_img()
         self.pounds = 3
-        self.point = 3
-        self.color = (255, 0, 0)
 
 class Swordfish(Fish):
+    image = pygame.image.load("Sprites/Swordfish.png")
+
     def __init__(self, x, y, xv = 0, yv = 0):
         super().__init__(x, y, xv, yv)
-        self.width = 125
-        self.height = 80
+        self.width = 150
+        self.height = int(self.width * self.aspect_ratio)
+        self.scale_img()
         self.pounds = 5
-        self.point = 5
-        self.color = (0, 0, 220)
 
 fish = []
