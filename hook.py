@@ -58,7 +58,7 @@ class Hook:
                     fish_obj.caught = True
                     break
 
-    def draw(self, surface):
+    def draw(self, surface, current_round):
         if state['current_action'] != 'waiting':
             pygame.draw.circle(surface, self.color, (self.x - viewport.x, self.y - viewport.y), self.radius) 
         
@@ -66,7 +66,9 @@ class Hook:
         font = pygame.font.Font(None, 36)
         pounds_text = font.render(f"Pounds Caught: {self.pounds_caught}", True, (255, 255, 255))
         surface.blit(pounds_text, (20, 20)) 
-        counter_text = font.render(f"Fish Caught: {len(self.attached_fishes)}", True, (255, 255, 255))
+        counter_text = font.render(f"Round: {current_round}", True, (255, 255, 255))
         surface.blit(counter_text, (surface.get_width() - counter_text.get_width() - 20, 20)) 
+        counter_text = font.render(f"Fish Caught: {len(self.attached_fishes)}", True, (255, 255, 255))
+        surface.blit(counter_text, (surface.get_width() - counter_text.get_width() - 20, 50)) 
    
 hook = Hook()
