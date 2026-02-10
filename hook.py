@@ -40,7 +40,8 @@ class Hook:
                     break
 
     def draw(self, surface):
-        pygame.draw.circle(surface, self.color, (self.x - viewport.x, self.y - viewport.y), self.radius) 
+        if state['current_action'] != 'waiting':
+            pygame.draw.circle(surface, self.color, (self.x - viewport.x, self.y - viewport.y), self.radius) 
         
         # Draw fish counter in top right corner
         font = pygame.font.Font(None, 36)

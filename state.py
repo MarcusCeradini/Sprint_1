@@ -1,3 +1,3 @@
 state = {
-    'current_action': 'casting'
+    'current_action': 'waiting'
 }

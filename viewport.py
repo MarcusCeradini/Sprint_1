@@ -7,7 +7,7 @@ class Viewport:
     SPEED_REELING = -3
     def __init__(self):
         self.x = 0
-        self.y = 0
+        self.y = -WINDOW_HEIGHT * 2 / 3
         self.width = WINDOW_WIDTH
         self.height = WINDOW_HEIGHT
     def update(self):
@@ -20,6 +20,7 @@ class Viewport:
         elif state['current_action'] == 'reeling':
             self.y += Viewport.SPEED_REELING
             if self.y <= -self.height * 2 / 3:
+                self.y = -self.height * 2 / 3
                 state['current_action'] = 'waiting'
 
 

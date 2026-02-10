@@ -41,7 +41,7 @@ def main():
     # Render elements of the game
     screen.fill(BACKGROUND)
     if viewport.y < 0:
-      pygame.draw.rect(screen, (0, 200, 255), pygame.Rect(0, 0, WINDOW_WIDTH, -viewport.y))
+        pygame.draw.rect(screen, (0, 200, 255), pygame.Rect(0, 0, WINDOW_WIDTH, -viewport.y))
   
 
     # Game logic
@@ -56,7 +56,7 @@ def main():
     
     for element in fish:
       element.update(hook)
-      
+    
     # draw fish
     for element in fish:
         element.draw(screen)
