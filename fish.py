@@ -44,6 +44,8 @@ class Fish:
         return self.x <= x and x <= self.x + self.width and self.y <= y and y <= self.y + self.height
 
     def draw(self, surface):
+        if not self.caught and state['current_action'] == 'waiting':
+            return
         pygame.draw.rect(surface, self.color, pygame.Rect(self.x - viewport.x, self.y - viewport.y, self.width, self.height))
 
 
@@ -52,6 +54,7 @@ class Carp(Fish):
         super().__init__(x, y, xv, yv)
         self.width = 50
         self.height = 30
+        self.pounds = 2
 
         self.color = (200, 0, 0)
         
@@ -60,6 +63,7 @@ class Salmon(Fish):
         super().__init__(x, y, xv, yv)
         self.width = 70
         self.height = 40
+        self.pounds = 3
 
         self.color = (255, 0, 0)
 
@@ -68,6 +72,7 @@ class Swordfish(Fish):
         super().__init__(x, y, xv, yv)
         self.width = 125
         self.height = 80
+        self.pounds = 5
 
         self.color = (0, 0, 220)
 
