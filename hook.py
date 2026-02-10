@@ -11,6 +11,7 @@ class Hook:
         self.radius = 5
         self.color = 'BLACK'
 
+        self.max_speed = 11
         self.attached_fishes = []
         self.catch_distance = 20
         self.max_fish = 5
@@ -23,16 +24,29 @@ class Hook:
     # Used AI to help with the hook movement and collision detection
     def update(self):
         cursor_x, cursor_y = pygame.mouse.get_pos()
-        if state['current_action'] == 'waiting':
+        cursor_y += viewport.y
+        if state['current_action'] != 'reeling':
+            self.x = cursor_x
+            self.y = cursor_y
+            # self.y = viewport.y + viewport.width / 2
             return
-        self.x = cursor_x 
-        self.y = viewport.y + cursor_y
-        # self.y = viewport.y + viewport.width / 2
+        
+        dx = cursor_x - self.x
+        dy = cursor_y - self.y
+        magnitude = (dx * dx + dy * dy) ** .5
+        if magnitude <= self.max_speed:
+            self.x = cursor_x
+            self.y = cursor_y
+        else:
+            # normalize then scale by speed
+            self.x += dx / magnitude * self.max_speed
+            self.y += dy / magnitude * self.max_speed
+            
         
         # Check for fish collision if not at max capacity
         if len(self.attached_fishes) < self.max_fish:
             for fish_obj in fish:
-                if state['current_action'] != 'reeling' or fish_obj.caught:
+                if fish_obj.caught:
                     continue
                 if fish_obj.check_collision(self.x, self.y):
                     self.attached_fishes.append(fish_obj)
