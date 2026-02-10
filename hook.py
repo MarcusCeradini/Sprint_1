@@ -15,6 +15,11 @@ class Hook:
         self.attached_fishes = []
         self.catch_distance = 20
         self.max_fish = 5
+    
+    def cast(self):
+        state['current_action'] = 'casting'
+        self.x = viewport.width / 2
+        self.y = viewport.width / 4
 
     # Used AI to help with the hook movement and collision detection
     def update(self):
@@ -49,7 +54,8 @@ class Hook:
                     break
 
     def draw(self, surface):
-        pygame.draw.circle(surface, self.color, (self.x - viewport.x, self.y - viewport.y), self.radius) 
+        if state['current_action'] != 'waiting':
+            pygame.draw.circle(surface, self.color, (self.x - viewport.x, self.y - viewport.y), self.radius) 
         
         # Draw fish counter in top right corner
         font = pygame.font.Font(None, 36)

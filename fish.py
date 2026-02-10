@@ -1,6 +1,7 @@
 import pygame
 from viewport import viewport
 from setup import WINDOW_WIDTH, WINDOW_HEIGHT
+from state import state
 
 # abstract class
 class Fish:
@@ -16,10 +17,15 @@ class Fish:
 
     def update(self, hook):
         if self.caught:
+            # Calculate position of each fish individually to create a vertical line
+            index_of_fish = hook.attached_fishes.index(self)
+            y_offset_fish = hook.radius + 5
+            for i in range(index_of_fish):
+                y_offset_fish += hook.attached_fishes[i].height + 5
             # Update attached fish positions to follow hook
             self.x = hook.x - self.width / 2
-            self.y = hook.y + hook.radius + 5
-        else:
+            self.y = hook.y + y_offset_fish
+        elif state['current_action'] != 'waiting':
             # Move fish and bounce off screen edges
             self.x += self.xv
             self.y += self.yv
@@ -40,11 +46,6 @@ class Fish:
     def draw(self, surface):
         pygame.draw.rect(surface, self.color, pygame.Rect(self.x - viewport.x, self.y - viewport.y, self.width, self.height))
 
-    def reset(x, y):
-        pass
-
-# Carp, Salmon , Swordfish
-# PufferFish
 
 class Carp(Fish):
     def __init__(self, x, y, xv = 0, yv = 0):

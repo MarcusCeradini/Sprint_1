@@ -36,25 +36,53 @@
 
 ## Evan Y
 - What I did: Planned structured of code, assigned coding tasks and assisted with teammates.
-- What I'm doing: 
+- What I'm doing: Connected python files to make them work together
 - Blocked? N/A
 
 ## Marcus C
 - What I did: Planned how to make fish generator, finished and pushed.
-- What I'm doing: Making all required files on GitHub for submission
+- What I'm doing: Starting to plan round system
 - Blocked? N/A
 
 ## Bianca B
 - What I did: Finished viewport logic and code
-- What I'm doing: 
+- What I'm doing: Finished viewport logic and code
 - Blocked? N/A
 
 ## Maddy P
 - What I did: Worked on hook logic and code
-- What I'm doing: 
+- What I'm doing: Worked on hook logic and code
 - Blocked? N/A
 
 ## Ayah A
 - What I did: Worked on fish logic and code
-- What I'm doing: 
+- What I'm doing: Worked on fish logic and code
+- Blocked? N/A
+
+
+## Date: 2/9/26
+
+## Evan Y
+- What I did: Worked on round system and casting hook into water
+- What I'm doing: Working on hook drag 
+- Blocked? N/A
+
+## Marcus C
+- What I did: Implemented hook system
+- What I'm doing: Worked on hook drag
+- Blocked? N/A
+
+## Bianca B
+- What I did: Offsetting fish on hook
+- What I'm doing: Figuring out how to scale fish
+- Blocked? N/A
+
+## Maddy P
+- What I did: Worked on salmon and card sprites
+- What I'm doing: Working on swordfish sprite
+- Blocked? N/A
+
+## Ayah A
+- What I did: Offsetting fish on hook
+- What I'm doing: Figuring out how to scale fish
 - Blocked? N/A
