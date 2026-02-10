@@ -55,7 +55,7 @@ class Carp(Fish):
         self.width = 50
         self.height = 30
         self.pounds = 2
-
+        self.point = 1
         self.color = (200, 0, 0)
         
 class Salmon(Fish):
@@ -64,7 +64,7 @@ class Salmon(Fish):
         self.width = 70
         self.height = 40
         self.pounds = 3
-
+        self.point = 3
         self.color = (255, 0, 0)
 
 class Swordfish(Fish):
@@ -73,7 +73,7 @@ class Swordfish(Fish):
         self.width = 125
         self.height = 80
         self.pounds = 5
-
+        self.point = 5
         self.color = (0, 0, 220)
 
 fish = []

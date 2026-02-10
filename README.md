@@ -39,7 +39,9 @@ Short explanation of what the game is about:
 ## Known Issues
 
 - Limited Graphics
-- No multplayer
+- No multiplayer
+- Limited movements & catch limit
+- Sandbox execution 
 
 ---
 
