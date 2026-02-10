@@ -14,6 +14,7 @@ Short explanation of what the game is about:
 ---
 
 ## How to Run the Game
+- Follow instructions on INSTRUCTIONS.md
 
 ### Requirements
 - pygame
