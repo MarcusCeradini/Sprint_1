@@ -12,20 +12,20 @@ Date:
 # Bug Verification Details
 
 ## Bug #1
-- Original Issue: [What you reported in Week 6]
-- Severity: Critical / High / Medium / Low
+- Original Issue: No Ending/Win Condition
+- Severity: Critical
 - Status: ☐ Fixed ☐ Still Present ☐ Partially Fixed
 - Verification Notes: [What you tested and what you found]
 
 ## Bug #2
-- Original Issue: [What you reported in Week 6]
-- Severity: Critical / High / Medium / Low
+- Original Issue: Game Keeps Playing Even if User Catches No Fish
+- Severity: High
 - Status: ☐ Fixed ☐ Still Present ☐ Partially Fixed
 - Verification Notes: [What you tested and what you found]
 
 ## Bug #3
-- Original Issue: [What you reported in Week 6]
-- Severity: Critical / High / Medium / Low
+- Original Issue: No Maximum Amount of Rounds
+- Severity: High
 - Status: ☐ Fixed ☐ Still Present ☐ Partially Fixed
 - Verification Notes: [What you tested and what you found]
 
