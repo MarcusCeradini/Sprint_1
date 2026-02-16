@@ -49,4 +49,4 @@ Date:
 * Ayah
 * Evan Y
 
-- Verification Completed: 
+Verification Completed: 
