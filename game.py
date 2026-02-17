@@ -19,11 +19,13 @@ viewport.height = WINDOW_HEIGHT
 screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 pygame.display.set_caption('Fshng Game')
 
-current_round = 0
+current_round = 1
+cast = 0
 max_round = 5
 
 def main():
     global current_round
+    global cast
     looping = True
 
     # The main game loop
@@ -36,8 +38,17 @@ def main():
             elif event.type == pygame.MOUSEBUTTONUP:
                 if state['current_action'] == 'waiting':
                     hook.cast()
-                    gameState.start_cast(current_round)
-                    current_round += 1
+                    cast += 1
+                    current_round = int((cast - 1) / 3) + 1
+                    if hook.pounds_caught == (current_round * 20):
+                        print("You caught enough fish to feed the shark")
+                    elif current_round == max_round:
+                        print("Congrats you won")
+                        pygame.quit()
+                    elif cast == 3 and hook.pounds_caught != (current_round * 20):
+                        print("Sorry you lose")
+                        pygame.quit()
+                    gameState.start_cast(current_round, cast)
 
         # Render elements of the game
         screen.fill(BACKGROUND)
@@ -63,7 +74,7 @@ def main():
             element.draw(screen)
 
         # draw hook
-        hook.draw(screen, current_round)
+        hook.draw(screen, current_round, cast)
         
         # Used AI to fix fish not being gotten rid of when caught issue
         pygame.display.update()

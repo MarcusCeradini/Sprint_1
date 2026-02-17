@@ -2,10 +2,12 @@ import random
 from setup import WINDOW_WIDTH, WINDOW_HEIGHT, cast_distance
 import pygame
 from fish import *
+from hook import *
 
-def start_cast(current_round):
+def start_cast(current_round, cast):
     print('New round!')
     generate_fish(current_round)
+    print("You reached the ending of the game")
 
 PROBABILITIES = {
     Carp: .5,
@@ -29,8 +31,3 @@ def generate_fish(current_round):
             if rng < probability:
                 fish.append(FishClass(random.randint(0, WINDOW_WIDTH), random.randint(0, cast_distance)))
                 break
-    if (current_round == 3):
-        """" TODO: Add an end screen, as well as adding the shark ending
-             toggles screen for 5 seconds and instructs the user to run the game again to """
-        print("You reached the ending of the game")
-        pygame.quit()
