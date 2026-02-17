@@ -39,14 +39,6 @@ def main():
                     hook.cast()
                     cast += 1
                     current_round = int((cast - 1) / 3) + 1
-                    if hook.pounds_caught == (current_round * 20):
-                        print("You caught enough fish to feed the shark")
-                    elif current_round == max_round:
-                        print("Congrats you won")
-                        pygame.quit()
-                    elif cast == 3 and hook.pounds_caught != (current_round * 20):
-                        print("Sorry you lose")
-                        pygame.quit()
                     gameState.start_cast(current_round, cast)
 
         # Render elements of the game
@@ -64,10 +56,16 @@ def main():
         viewport.update()
         
         # check if game is over
-        if current_round == 2 and state['current_action'] == 'waiting':
-            state['game_ended'] = True
-            print("You reached the ending of the game")
-            gameState.draw_end_screen()
+        if state['current_action'] == 'waiting':
+            if current_round == max_round: # win condition
+                print("You caught enough fish to feed the shark")
+                print("Congrats you won")
+                gameState.draw_end_screen()
+                break
+            elif cast != 0 and cast % 3 == 0 and hook.pounds_caught < (current_round * 20): # lose condition
+                print("Sorry you lose")
+                gameState.draw_end_screen()
+                break
 
         # update fish (plural)
 
@@ -85,8 +83,8 @@ def main():
         pygame.display.update()
         fpsClock.tick(FPS)
 
-        if state['game_ended']:
-            break
+        # if state['game_ended']:
+        #     break
         
     while True:
         for event in pygame.event.get():
