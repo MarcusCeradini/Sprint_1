@@ -31,3 +31,12 @@ def generate_fish(current_round):
             if rng < probability:
                 fish.append(FishClass(random.randint(0, WINDOW_WIDTH), random.randint(0, cast_distance)))
                 break
+
+def draw_end_screen():
+    pass # TODO: Implement end screen
+    image = pygame.image.load("Sprites/LeftSharkFIRE.png")
+    WIDTH, HEIGHT = 800, 600
+
+    image_rect = image.get_rect()
+    image_rect.center = (WIDTH // 2, HEIGHT // 2)
+

@@ -11,7 +11,7 @@ class Hook:
         self.radius = 5
         self.color = 'BLACK'
 
-        self.max_speed = 5
+        self.max_speed = 10
         self.attached_fishes = []
         self.catch_distance = 20
         self.max_fish = 10

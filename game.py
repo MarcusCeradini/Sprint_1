@@ -26,10 +26,9 @@ max_round = 5
 def main():
     global current_round
     global cast
-    looping = True
 
     # The main game loop
-    while looping:
+    while True:
         # Get inputs
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -63,6 +62,12 @@ def main():
 
         # update viewport
         viewport.update()
+        
+        # check if game is over
+        if current_round == 2 and state['current_action'] == 'waiting':
+            state['game_ended'] = True
+            print("You reached the ending of the game")
+            gameState.draw_end_screen()
 
         # update fish (plural)
 
@@ -79,5 +84,14 @@ def main():
         # Used AI to fix fish not being gotten rid of when caught issue
         pygame.display.update()
         fpsClock.tick(FPS)
+
+        if state['game_ended']:
+            break
+        
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
 
 main()
