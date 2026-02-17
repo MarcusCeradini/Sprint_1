@@ -29,6 +29,7 @@ def generate_fish(current_round):
             if rng < probability:
                 fish.append(FishClass(random.randint(0, WINDOW_WIDTH), random.randint(0, cast_distance)))
                 break
+<<<<<<< HEAD
     if (current_round == 3):
         """" TODO: Add an end screen, as well as adding the shark ending
              toggles screen for 5 seconds and instructs the user to run the game again to """
