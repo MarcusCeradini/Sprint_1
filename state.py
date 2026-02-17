@@ -1,3 +1,4 @@
 state = {
-    'current_action': 'waiting'
+    'current_action': 'waiting',
+    'game_ended': False
 }
