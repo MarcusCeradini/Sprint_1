@@ -14,27 +14,20 @@ Date:
 ## Bug #1
 - Original Issue: No Ending/Win Condition
 - Severity: Critical
-- Status: ☐ Fixed ☐ Still Present ☐ Partially Fixed
-- Verification Notes: [What you tested and what you found]
+- Status: ☐ Fixed
+- Verification Notes: Added conditions for win and lose
 
 ## Bug #2
 - Original Issue: Game Keeps Playing Even if User Catches No Fish
 - Severity: High
-- Status: ☐ Fixed ☐ Still Present ☐ Partially Fixed
-- Verification Notes: [What you tested and what you found]
+- Status: ☐ Partially Fixed
+- Verification Notes: You get 3 casts to meet the catch quota
 
 ## Bug #3
 - Original Issue: No Maximum Amount of Rounds
 - Severity: High
-- Status: ☐ Fixed ☐ Still Present ☐ Partially Fixed
-- Verification Notes: [What you tested and what you found]
-
-# Regressions (New Bugs from Fixes)
-## Regression #1 (if any)
-- What Happened: [Describe the new bug]
-- When It Occurs: [Steps to reproduce]
-- Severity: Critical / High / Medium / Low
-- Related to Fix: [Which original bug fix caused this]
+- Status: ☐ Fixed
+- Verification Notes: Made max rounds 5
 
 # Overall Assesment
 - Game Status After Fixes: [Brief description of the game's current state]
