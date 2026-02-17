@@ -56,7 +56,7 @@ def main():
         if current_round == 2 and state['current_action'] == 'waiting':
             state['game_ended'] = True
             print("You reached the ending of the game")
-            gameState.draw_end_screen()
+            gameState.draw_end_screen(screen)
 
         # update fish (plural)
 

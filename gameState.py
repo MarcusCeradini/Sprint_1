@@ -29,19 +29,24 @@ def generate_fish(current_round):
             if rng < probability:
                 fish.append(FishClass(random.randint(0, WINDOW_WIDTH), random.randint(0, cast_distance)))
                 break
-<<<<<<< HEAD
-    if (current_round == 3):
-        """" TODO: Add an end screen, as well as adding the shark ending
-             toggles screen for 5 seconds and instructs the user to run the game again to """
-        print("You reached the ending of the game")
-        pygame.quit()
 
-def draw_end_screen():
-    pass # TODO: Implement end screen
-    image = pygame.image.load("Sprites/LeftSharkFIRE.png")
-    WIDTH, HEIGHT = 800, 600
+image = pygame.image.load("Sprites/LeftSharkFIRE.png")
 
-    image_rect = image.get_rect()
-    image_rect.center = (WIDTH // 2, HEIGHT // 2)
+def draw_end_screen(screen):
+        WIDTH, HEIGHT = 960, 600
 
-    
+        # Set a opaque overlay
+        overlay = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
+        overlay.fill((0, 0, 0, 180))
+        screen.blit(overlay, (0, 0))
+
+        # Draw image to the center
+        image_rect = image.get_rect(center=(WIDTH // 2, HEIGHT // 2))
+        screen.blit(image, image_rect)
+        
+        #font = pygame.font.Font(None, 36)
+        #pounds_text = font.render("Game End!", True, (255, 255, 255))
+        #screen.blit(pounds_text, (20, 20))
+        
+
+
