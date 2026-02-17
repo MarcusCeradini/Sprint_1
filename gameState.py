@@ -2,10 +2,12 @@ import random
 from setup import WINDOW_WIDTH, WINDOW_HEIGHT, cast_distance
 import pygame
 from fish import *
+from hook import *
 
-def start_cast(current_round):
+def start_cast(current_round, cast):
     print('New round!')
     generate_fish(current_round)
+    print("You reached the ending of the game")
 
 PROBABILITIES = {
     Carp: .5,

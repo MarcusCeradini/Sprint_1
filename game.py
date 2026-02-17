@@ -53,10 +53,23 @@ def main():
         viewport.update()
         
         # check if game is over
+<<<<<<< HEAD
         if current_round == 2 and state['current_action'] == 'waiting':
             state['game_ended'] = True
             print("You reached the ending of the game")
             gameState.draw_end_screen(screen)
+=======
+        if state['current_action'] == 'waiting':
+            if current_round == max_round: # win condition
+                print("You caught enough fish to feed the shark")
+                print("Congrats you won")
+                gameState.draw_end_screen()
+                break
+            elif cast != 0 and cast % 3 == 0 and hook.pounds_caught < (current_round * 20): # lose condition
+                print("Sorry you lose")
+                gameState.draw_end_screen()
+                break
+>>>>>>> ddadde2238b12856f04039bb92ddde044f2d8522
 
         # update fish (plural)
 
