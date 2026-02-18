@@ -30,7 +30,7 @@ class Hook:
             self.x = cursor_x
             self.y = cursor_y
             # self.y = viewport.y + viewport.width / 2
-            if state['current_action'] == 'waiting' and len(self.attached_fishes) != 0:
+            while state['current_action'] == 'waiting' and len(self.attached_fishes) != 0:
                 fish_caught = self.attached_fishes.pop()
                 self.pounds_caught += fish_caught.pounds
                 fish_caught.caught = False # no longer in list of caught fish

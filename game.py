@@ -47,29 +47,30 @@ def main():
 
 
         # Game logic
+        
+        # update viewport
+        viewport.update()
 
         # update hook
         hook.update()
-
-        # update viewport
-        viewport.update()
-        
-        # check if game is over
-        if state['current_action'] == 'waiting':
-            if current_round == max_round: # win condition
-                print("You caught enough fish to feed the shark")
-                print("Congrats you won")
-                gameState.draw_end_screen()
-                break
-            elif cast != 0 and cast % 3 == 0 and hook.pounds_caught < ((current_round * 20) * 1.5): # lose condition
-                print("Sorry you lose")
-                gameState.draw_end_screen(screen)
-                break
 
         # update fish (plural)
 
         for element in fish:
             element.update(hook)
+
+
+        # check if game is over
+        if state['current_action'] == 'waiting':
+            if current_round == max_round: # win condition
+                print("You caught enough fish to feed the shark")
+                print("Congrats you won")
+                gameState.draw_end_screen(screen)
+                break
+            elif cast != 0 and cast % 3 == 0 and hook.pounds_caught < ((current_round * 20) * 1.5): # lose condition
+                print("Sorry you lose")
+                gameState.draw_end_screen(screen)
+                break
 
         # draw fish
         for element in fish:
