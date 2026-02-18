@@ -66,7 +66,7 @@ def main():
             if current_round == max_round: # win condition
                 print("You caught enough fish to feed the shark")
                 print("Congrats you won")
-                gameState.draw_end_screen(screen)
+                gameState.draw_end_screen()
                 break
             elif cast != 0 and cast % 1 == 0 and hook.pounds_caught < ((current_round * 20) * 1.5): # lose condition
                 print("Sorry you lose")
