@@ -4,8 +4,8 @@ import pygame
 from fish import *
 from hook import *
 
-def start_cast(current_round, cast):
-    print('New round!')
+def start_cast(current_round):
+    print('New cast!')
     generate_fish(current_round)
 
 PROBABILITIES = {
@@ -32,7 +32,7 @@ def generate_fish(current_round):
                 break
 
 
-def draw_end_screen(screen):
+def draw_end_screen(screen, won):
     image = pygame.image.load("Sprites/LeftSharkFIRE.png")
     WIDTH, HEIGHT = 960, 600
 
@@ -47,8 +47,9 @@ def draw_end_screen(screen):
     image_rect = image.get_rect(center=(WIDTH // 2, HEIGHT // 2))
     screen.blit(image, image_rect)
         
-    #font = pygame.font.Font(None, 36)
-    #pounds_text = font.render("Game End!", True, (255, 255, 255))
-    #screen.blit(pounds_text, (20, 20))
+    font = pygame.font.Font(None, 70)
+    text = font.render("You won!" if won else "You lost", True, (255, 255, 255))
+    text_rect = text.get_rect(center=(screen.width / 2, screen.height / 6))
+    screen.blit(text, text_rect)
     
     pygame.display.update()

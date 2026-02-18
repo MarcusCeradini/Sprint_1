@@ -38,7 +38,7 @@ def main():
                     hook.cast()
                     cast += 1
                     current_round = int((cast - 1) / 3) + 1
-                    gameState.start_cast(current_round, cast)
+                    gameState.start_cast(current_round)
 
         # Render elements of the game
         screen.fill(BACKGROUND)
@@ -66,11 +66,11 @@ def main():
             if current_round == max_round: # win condition
                 print("You caught enough fish to feed the shark")
                 print("Congrats you won")
-                gameState.draw_end_screen()
+                gameState.draw_end_screen(screen, True)
                 break
             elif cast != 0 and cast % 3 == 0 and hook.pounds_caught < ((current_round * 20) * 1.5): # lose condition
                 print("Sorry you lose")
-                gameState.draw_end_screen(screen)
+                gameState.draw_end_screen(screen, False)
                 break
 
         # draw fish
