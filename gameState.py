@@ -31,9 +31,9 @@ def generate_fish(current_round):
                 fish.append(FishClass(random.randint(0, WINDOW_WIDTH), random.randint(0, cast_distance)))
                 break
 
-image = pygame.image.load("Sprites/LeftSharkFIRE.png")
 
 def draw_end_screen(screen):
+    image = pygame.image.load("Sprites/LeftSharkFIRE.png")
     WIDTH, HEIGHT = 960, 600
 
     # Set a opaque overlay
@@ -41,10 +41,14 @@ def draw_end_screen(screen):
     overlay.fill((0, 0, 0, 180))
     screen.blit(overlay, (0, 0))
 
-    # Draw image to the center
+    # # Draw image to the center
+    # screen.blit(image, (0, 0))
+    # print(image_rect)
     image_rect = image.get_rect(center=(WIDTH // 2, HEIGHT // 2))
     screen.blit(image, image_rect)
         
     #font = pygame.font.Font(None, 36)
     #pounds_text = font.render("Game End!", True, (255, 255, 255))
     #screen.blit(pounds_text, (20, 20))
+    
+    pygame.display.update()
